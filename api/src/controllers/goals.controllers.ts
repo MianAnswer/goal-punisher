@@ -1,36 +1,36 @@
 import { Request, Response } from 'express'
 import {
-  createGoal as controllerCreateGoal,
-  deleteGoal as controllerDeleteGoal,
-  getGoal as controllerGetGoal,
-  getGoals as controllerGetGoals,
-  updateGoal as controllerUpdateGoal,
-} from '../controllers/goals.controller'
+  createGoal as serviceCreateGoal,
+  deleteGoal as serviceDeleteGoal,
+  getGoal as serviceGetGoal,
+  getGoals as serviceGetGoals,
+  updateGoal as serviceUpdateGoal,
+} from '../services/goals.service'
 
 export const createGoal = (req: Request, res: Response) => {
-  const result = controllerCreateGoal()
+  const result = serviceCreateGoal()
   res.send(result)
 }
 
 export const deleteGoal = (req: Request, res: Response) => {
   const { id } = req.params
-  const result = controllerDeleteGoal(Number(id))
+  const result = serviceDeleteGoal(Number(id))
   res.send(result)
 }
 
 export const getGoals = (req: Request, res: Response) => {
-  const result = controllerGetGoals()
+  const result = serviceGetGoals()
   res.send(result)
 }
 
 export const getGoal = (req: Request, res: Response) => {
   const { id } = req.params
-  const result = controllerGetGoal(Number(id))
+  const result = serviceGetGoal(Number(id))
   res.send(result)
 }
 
 export const updateGoal = (req: Request, res: Response) => {
   const { id } = req.params
-  const result = controllerUpdateGoal(Number(id))
+  const result = serviceUpdateGoal(Number(id))
   res.send(result)
 }

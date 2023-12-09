@@ -5,7 +5,7 @@ import {
   getGoal,
   getGoals,
   updateGoal,
-} from '../../../middlewares/goals.middeware'
+} from '../../../controllers/goals.controllers'
 
 const goalsRouter = Router()
 
