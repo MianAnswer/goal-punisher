@@ -15,6 +15,7 @@ module.exports = {
     'arrow-body-style': 'off',
     'import/extensions': 'off',
     'prefer-regex-literals': 'off',
+    'no-console': 'off',
   },
   root: true,
   settings: {
