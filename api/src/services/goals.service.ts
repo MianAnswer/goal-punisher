@@ -1,5 +1,13 @@
-const createGoal = () => {
-  return 'goals.service/createGoal needs implementation'
+import IGoal from '../models/goal'
+import GoalModel from '../models/goal.model'
+
+const createGoal = async (goal: IGoal) => {
+  try {
+    const result = await GoalModel.create(goal)
+    return JSON.stringify(result.toJSON())
+  } catch (error) {
+    return `${error}`
+  }
 }
 
 const deleteGoal = (id: number) => {
