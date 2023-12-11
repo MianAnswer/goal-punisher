@@ -18,8 +18,13 @@ const getGoal = (id: number) => {
   return `goals.service/getGoal${id} needs implementation`
 }
 
-const getGoals = () => {
-  return 'goals.service/getGoals needs implementation'
+const getGoals = async () => {
+  try {
+    const result = await GoalModel.find()
+    return result.toString()
+  } catch (error) {
+    return `${error}`
+  }
 }
 
 const updateGoal = (id: number) => {

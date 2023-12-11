@@ -23,7 +23,7 @@ const deleteGoal = async (req: Request, res: Response) => {
 }
 
 const getGoals = async (req: Request, res: Response) => {
-  const result = goalsService.getGoals()
+  const result = await goalsService.getGoals()
   res.send(result)
 }
 
