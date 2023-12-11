@@ -7,6 +7,8 @@ const { host, port } = config.server
 
 const app = express()
 
+app.use(express.urlencoded({ extended: true }))
+
 app.use('/', router)
 app.get('/', (req, res) => {
   res.send('Hello, World!')
