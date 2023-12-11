@@ -29,7 +29,7 @@ const getGoals = async (req: Request, res: Response) => {
 
 const getGoal = async (req: Request, res: Response) => {
   const { id } = req.params
-  const result = goalsService.getGoal(Number(id))
+  const result = await goalsService.getGoal(id)
   res.send(result)
 }
 

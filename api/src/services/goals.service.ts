@@ -14,8 +14,13 @@ const deleteGoal = (id: number) => {
   return `goals.service/deleteGoal${id} needs implementation`
 }
 
-const getGoal = (id: number) => {
-  return `goals.service/getGoal${id} needs implementation`
+const getGoal = async (id: string) => {
+  try {
+    const result = await GoalModel.findById(id)
+    return JSON.stringify(result != null ? result.toJSON() : '{}')
+  } catch (error) {
+    return `${error}`
+  }
 }
 
 const getGoals = async () => {
