@@ -18,7 +18,7 @@ const createGoal = async (req: Request, res: Response) => {
 
 const deleteGoal = async (req: Request, res: Response) => {
   const { id } = req.params
-  const result = goalsService.deleteGoal(Number(id))
+  const result = await goalsService.deleteGoal(id)
   res.send(result)
 }
 

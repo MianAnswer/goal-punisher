@@ -10,8 +10,13 @@ const createGoal = async (goal: IGoal) => {
   }
 }
 
-const deleteGoal = (id: number) => {
-  return `goals.service/deleteGoal${id} needs implementation`
+const deleteGoal = async (id: string) => {
+  try {
+    const result = await GoalModel.deleteOne({ id })
+    return `id: ${id}\nawknowledged: ${result.acknowledged}`
+  } catch (error) {
+    return `${error}`
+  }
 }
 
 const getGoal = async (id: string) => {

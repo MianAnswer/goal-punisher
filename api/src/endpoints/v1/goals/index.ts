@@ -4,10 +4,14 @@ import goalsValidation from '../../../middlewares/goalValidation'
 
 const goalsRouter = Router()
 
-goalsRouter.post('/', goalsValidation.goalValidator, goalsController.createGoal)
-goalsRouter.delete('/:id', goalsController.deleteGoal)
-goalsRouter.get('/', goalsController.getGoals)
-goalsRouter.get('/:id', goalsController.getGoal)
-goalsRouter.put('/:id', goalsValidation.goalValidator, goalsValidation.goalValidator, goalsController.updateGoal)
+goalsRouter.route('/')
+  .post(goalsValidation.goalValidator, goalsController.createGoal)
+  .get(goalsController.getGoals)
+
+goalsRouter.route('/:id')
+  .all(goalsValidation.idValidator)
+  .get(goalsController.getGoal)
+  .delete(goalsController.deleteGoal)
+  .put(goalsValidation.goalValidator, goalsController.updateGoal)
 
 export default goalsRouter
