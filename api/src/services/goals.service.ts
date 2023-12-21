@@ -37,8 +37,13 @@ const getGoals = async () => {
   }
 }
 
-const updateGoal = (id: number) => {
-  return `goals.service/updateGoal${id} needs implementation`
+const updateGoal = async (id: string, goal: IGoal) => {
+  try {
+    const result = await GoalModel.updateOne({ id }, goal)
+    return result.toString()
+  } catch (error) {
+    return `${error}`
+  }
 }
 
 export default {

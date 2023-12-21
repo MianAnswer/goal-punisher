@@ -5,6 +5,7 @@ import { isValidObjectId } from 'mongoose'
 const goalSchemaPUT = Joi.object({
   description: Joi.string(),
   dueDate: Joi.date(),
+  completed: Joi.boolean(),
 })
   .required()
   .min(1)
