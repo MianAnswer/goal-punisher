@@ -1,0 +1,33 @@
+{
+  "name": "task-scheduler",
+  "version": "1.0.0",
+  "description": "Task scheduler that sends out messages to user's friends when the user hasn't finished a task on time",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "node dist/app.js",
+    "build": "npx tsc -p .",
+    "lint": "eslint \"src/**\"",
+    "start:watch": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MianAnswer/goal-punisher.git"
+  },
+  "author": "Waqas Answer",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "mongoose": "^8.0.3"
+  }
+}
